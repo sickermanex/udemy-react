@@ -2,8 +2,9 @@ import React from 'react';
 
 import Person from './Person/Person'
 
-const Persons = (props) => (
-  props.people.map((person, index) => {
+const Persons = (props) => {
+  console.log('[Persons.js] rendering...');
+  return props.people.map((person, index) => {
     // return <ErrorBoundary key={person.id}>
     return <Person 
       key={person.id}                              
@@ -13,7 +14,7 @@ const Persons = (props) => (
       changed={(event) => props.changed(event, person.id)}
     />
     // </ErrorBoundary>       
-  })
-);
+  });
+};
 
 export default Persons;
