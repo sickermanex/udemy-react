@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 // import './Person.css';
@@ -12,19 +12,18 @@ const StyledDiv = styled.div`
   text-align: center;
 `;
 
-const person = (props) => {
-  // const rnd = Math.random();
-  // if(rnd > 0.7){
-  //   throw new Error('Something went wrong');
-  // }
-  return (
-    // <div className="Person">
-    <StyledDiv>
-      <p onClick={props.click}>I'm {props.name}! And I'm {props.age} years old!</p>
-      <p>{props.children}</p>
-      <input type="text" value={props.name} onChange={props.changed} />
-    </StyledDiv>
-  )
-};
+class Person extends Component {
+  render() {
+    console.log('[Person.js] rendering...')
+    return (
+      // <div className="Person">
+      <StyledDiv>
+        <p onClick={this.props.click}>I'm {this.props.name}! And I'm {this.props.age} years old!</p>
+        <p>{this.props.children}</p>
+        <input type="text" value={this.props.name} onChange={this.props.changed} />
+      </StyledDiv>
+    )
+  }
+}
 
-export default person;
+export default Person;
