@@ -12,7 +12,7 @@ class Persons extends Component {
     /* Debe retornar true o false para definir si el componente se 
       debe actualizar o no, basado en alguna condición no hard coding el valor */
     console.log('[Persons.js] shouldComponentUpdate');
-    return true;
+    return nextProps.people !== this.props.people;
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
